@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overlay Jewels Try-On</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="webcam" autoplay muted playsinline></video>
+  <canvas id="overlay"></canvas>
+
+  <!-- Branding -->
+  <div id="branding">
+    <img src="cameraicon.png" alt="Camera Icon" class="camera-icon" />
+    Virtual Jewelry Try-On
+  </div>
+
+  <!-- Snapshot Modal -->
+  <div id="snapshot-modal">
+    <h3>Snapshot Preview</h3>
+    <img id="snapshot-preview" src="" alt="Snapshot" />
+    <div class="snapshot-buttons">
+      <button onclick="saveSnapshot()">Save</button>
+      <button onclick="shareSnapshot()">Share</button>
+      <button onclick="closeSnapshotModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Jewelry Selection Buttons -->
+  <div id="jewelry-mode">
+    <button onclick="selectMode('earring')">Earring</button>
+    <button onclick="selectMode('necklace')">Necklace</button>
+    <button onclick="selectMode(null)">Clear</button>
+  </div>
+
+  <!-- Jewelry Options -->
+  <div id="earring-options" class="options-group" style="display: none;"></div>
+  <div id="necklace-options" class="options-group" style="display: none;"></div>
+
+  <!-- Snapshot Button -->
+  <button id="snapshot-btn" onclick="takeSnapshot()">
+    <img src="camera-icon.png" alt="Snapshot" />
+  </button>
+
+  <!-- Info Button -->
+  <button id="info-btn" onclick="toggleInfoModal()">ℹ️</button>
+
+  <!-- Location Button -->
+  <button id="location-btn" onclick="toggleLocationModal()">📍</button>
+
+  <!-- Info Modal -->
+  <div id="info-modal">
+    <h3>How to Use the Try-On App</h3>
+    <div class="info-content">
+      <ul>
+        <li>Open the camera and scan the QR code.</li>
+        <li>Allow camera access when prompted.</li>
+        <li>Choose a jewelry item (earrings, necklace, etc.).</li>
+        <li>See it live on your face in real-time!</li>
+        <li>Try different styles, capture a photo if you like.</li>
+      </ul>
+      <button class="close-btn" onclick="toggleInfoModal()">Got it!</button>
+    </div>
+  </div>
+
+  <!-- Location Modal -->
+  <div id="location-modal">
+    <h3>Our Store Location</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2311772166054!2d76.7914619750737!3d11.3451594888403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba894ee63270f15%3A0x23a5bea6cd44a728!2s50%2C%20VP%20St%2C%20Vannarpet%2C%20Coonoor%2C%20Tamil%20Nadu%20643101!5e1!3m2!1sen!2sin!4v1750395670181!5m2!1sen!2sin" 
+      width="100%" height="300" 
+      style="border:0;" allowfullscreen="" 
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <button class="close-btn" onclick="toggleLocationModal()">Close</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
