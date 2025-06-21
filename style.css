@@ -45,7 +45,7 @@ video, canvas {
 
 #jewelry-mode {
   position: fixed;
-  bottom: 120px; /* Just above jewelry thumbnails */
+  bottom: 10px; /* Just below the thumbnails */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -57,6 +57,7 @@ video, canvas {
   border-radius: 12px;
   backdrop-filter: blur(8px);
 }
+
 
 
 #jewelry-mode button {
