@@ -28,16 +28,16 @@
     </div>
   </div>
 
-  <!-- Jewelry Options -->
-  <div id="earring-options" class="options-group" style="display: none;"></div>
-  <div id="necklace-options" class="options-group" style="display: none;"></div>
-
-  <!-- Jewelry Mode Buttons (Moved to bottom center) -->
+  <!-- Jewelry Selection Buttons -->
   <div id="jewelry-mode">
     <button onclick="selectMode('earring')">Earring</button>
     <button onclick="selectMode('necklace')">Necklace</button>
     <button onclick="selectMode(null)">Clear</button>
   </div>
+
+  <!-- Jewelry Options -->
+  <div id="earring-options" class="options-group" style="display: none;"></div>
+  <div id="necklace-options" class="options-group" style="display: none;"></div>
 
   <!-- Snapshot Button -->
   <button id="snapshot-btn" onclick="takeSnapshot()">
@@ -47,8 +47,9 @@
   <!-- Info Button -->
   <button id="info-btn" onclick="toggleInfoModal()">ℹ️</button>
 
-  <!-- Location Button (opens Google Maps) -->
+  <!-- Location Button -->
   <a id="location-btn" href="https://www.google.com/maps/place/50,+VP+St,+Vannarpet,+Coonoor,+Tamil+Nadu+643101" target="_blank" rel="noopener noreferrer">📍</a>
+
 
   <!-- Info Modal -->
   <div id="info-modal">
@@ -64,6 +65,7 @@
       <button class="close-btn" onclick="toggleInfoModal()">Got it!</button>
     </div>
   </div>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>

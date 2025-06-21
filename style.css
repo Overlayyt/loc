@@ -225,3 +225,48 @@ video, canvas {
   width: 400px;
   text-align: center;
 }
+/* Moved Jewelry Mode Buttons - Horizontal at Bottom */
+#jewelry-mode {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+#jewelry-mode button {
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#jewelry-mode button:hover {
+  background-color: #e6c200;
+}
+
+/* Location Button (bottom right, opens Google Maps) */
+#location-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  z-index: 10;
+}
